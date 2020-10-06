@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function processarLinha(linha) {
+  return linha;
+}
+
+
+
+//Este e um exemplo de processamento de entradas (inputs), sinta-se a vontade para altera-lo conforme necessidade da questao.
+function main(entradas) {
+
+    console.log("sdsdfsdf")
+  const linhas = entradas.trim().split("\n"); //separa as entradas por linha e converte em um ARRAY de STRINGS.
+
+  for (let i=0; i < linhas.length; i++) {
+    let resumedia;
+    let segundo;
+    let linha_entrada;
+    try {
+      linha_entrada = eval(linhas[i]); //tenta converter a string pra inteiro ou array se falhar, cai no catch.
+    } catch {
+      linha_entrada = linhas[i]; //mantem como string porque o eval falhou em converter pra inteiro ou array.
+    }
+    if (!linha_entrada || linha_entrada !== "") {
+      const resultado_processado = processarLinha(linha_entrada);
+      if (resultado_processado) {
+        
+        
+        const ele3 = linhas[3]
+        const ele1 = linhas[1]
+        var somaC = ele3.trim().split(" ")
+        var arrele1 = ele1.trim().split(" ")
+
+        console.log(somaC.length+"jhdjfksh")
+        
+        for (let ii=0; ii < somaC.length; ii++) {
+    let linha_entrada;
+        
+       var mediaC = somaC[ii]
+       arrele1.push(somaC[ii])
+              
+        var arrele1Num = arrele1.map(function(num){
+          return Number(num)
+        })       
+        
+
+        var tirarepetido = arrele1Num.sort().reverse().reduce((unico, item) => {
+          return unico.includes(item) ? unico : [...unico, item]
+}, []);
+        
+        var resfin = tirarepetido.indexOf(Number(mediaC), [pontoInicial = 0])+1;
+        
+
+        resumedia = tirarepetido
+        segundo = resfin
+        console.log(tirarepetido)
+        console.log(resfin)
+        } 
+       
+        
+
+      }
+    }
+  }
+}
+
+
+//const readline = require('readline');
+var qv = "5";
+var vtvpv = "30 32 32 52 10"
+var neC = "3"
+var eC = "10 25 41"
+
+
+
+/*var leitor = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+
+leitor.question("Qual número itens da fila de vendedores ?\n", function(answer) {
+    var qv = answer;    
+    leitor.close();
+});
+
+leitor.question("Qual os ids dos vendedores separados por espaço no estado inicial da fila F?\n", function(answer) {
+    var vtvpv = answer;    
+    leitor.close();
+});
+
+leitor.question("Qual o número de clientes cadastrados C?\n", function(answer) {
+    var neC = answer;    
+    leitor.close();
+});
+leitor.question("Qual a ID de um dos vendedores X?\n", function(answer) {
+    var eC = answer;   
+    leitor.close();
+});
+//o codigo abaixo nao deve ser alterado, só serve pra processar os inputs.
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+process.stdin.on("data", function (input) {
+    stdin_input += input;
+});
+process.stdin.on("end", function () {
+   main(stdin_input);
+});*/
+
+//var resp = `${qv}\n${vtvpv}\n${nec}\n${eC}\n`;
+        {
+            
+            main(qv+"\n"+vtvpv+"\n"+neC+"\n"+eC)}
+    </script>
+    
+</body>
+</html>
