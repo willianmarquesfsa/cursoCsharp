@@ -8,7 +8,7 @@ class Aula10{
          //DiasSemanas ds = DiasSemanas.Quarta;
          DiasSemanas dspn = (DiasSemanas)1;
 
-         int ds = (int)DiasSemanas.Sexta;
+         int ds = (int)DiasSemanas.Domingo;
          Console.WriteLine(ds);
   }
 }

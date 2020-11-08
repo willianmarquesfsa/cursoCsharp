@@ -3,66 +3,60 @@ const express = require('express');
 
 const App = express();
 
-App.get('/', (request, response)=> {
+const intei = 6
+
+const arr2 = [-4, 3, -9, 0, 4, 1,]
+
+const arr1 = [intei,arr2]
+
+function plusMinus(arr) {
+    
+    var i=0;
+    var negativos=0;
+    var positivos=0
+    var zeros=0
+
+    for(i=0;i<arr.length;i++){
+
+        if(arr[i]<0){
+            negativos++
+        }
+        if(arr[i]==0){
+            zeros++
+        }
+        if(arr[i]>0){
+            positivos++
+        }
+    }
+
+    var proN = 0;
+    var proZ = 0;
+    var proP = 0;
+    var resu = ""
+
+    proN = negativos/arr.length
+    proZ = zeros/arr.length
+    proP = positivos/arr.length
+
+    
+     resu = `${proP} \n ${proN} \n ${proZ}`
 
    
+    
+    return  resu
+    
+  
+  
+  }
 
-  'use strict';
-
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(str => str.trim());
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
-/*
- * Complete the simpleArraySum function below.
- */
-function simpleArraySum(ar) {
-    /*
-     * Write your code here.
-     */
-    return
-
-}
-
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const arCount = parseInt(readLine(), 10);
-
-    const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
-
-    let result = simpleArraySum(ar);
-
-    ws.write(result + "\n");
-
-    ws.end();
-}
+App.get('/', (request, response)=> {
+   response.json(plusMinus(arr2))
+   
+   plusMinus(arr2);
+})
 
 
 
-
-    return response.json({
-      Teste: 'Willian Marques'
-    });
-});
 
 App.listen(3333);
 

@@ -7,9 +7,7 @@
 </head>
 <body>
     <script>
-        'use strict';
-
-const fs = require('fs');
+       
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -22,7 +20,9 @@ process.stdin.on('data', inputStdin => {
 });
 
 process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(str => str.trim());
+    inputString = inputString.replace(/\s*$/, '')
+        .split('\n')
+        .map(str => str.replace(/\s*$/, ''));
 
     main();
 });
@@ -31,39 +31,22 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-/*
- * Complete the simpleArraySum function below.
- */
-function simpleArraySum(ar) {
-    /*
-     * Write your code here.
-     */
-    
-    let resultado;
+// Complete the plusMinus function below.
+function plusMinus(arr) {
+   
 
-    for(let i=0; i <= ar.length; i++){
-         resultado = resultado+ar[1]
-         
-    }
+  return "Dsds"
+  
 
-    return resultado
-
-    
 
 }
 
 function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+    const n = parseInt(readLine(), 10);
 
-    const arCount = parseInt(readLine(), 10);
+    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
-    const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
-
-    let result = simpleArraySum(ar);
-
-    ws.write(result + "\n");
-
-    ws.end();
+    plusMinus(arr);
 }
     </script>
     
